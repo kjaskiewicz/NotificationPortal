@@ -6,14 +6,15 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script type="text/javascript">
-        var appInsights=window.appInsights||function(config){
-            function s(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},r=document,f=window,e="script",o=r.createElement(e),i,u;for(o.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js",r.getElementsByTagName(e)[0].parentNode.appendChild(o),t.cookie=r.cookie,t.queue=[],i=["Event","Exception","Metric","PageView","Trace"];i.length;)s("track"+i.pop());return config.disableExceptionTracking||(i="onerror",s("_"+i),u=f[i],f[i]=function(config,r,f,e,o){var s=u&&u(config,r,f,e,o);return s!==!0&&t["_"+i](config,r,f,e,o),s}),t
+        var appInsights = window.appInsights || function (config) {
+            function s(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, r = document, f = window, e = "script", o = r.createElement(e), i, u; for (o.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", r.getElementsByTagName(e)[0].parentNode.appendChild(o), t.cookie = r.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) s("track" + i.pop()); return config.disableExceptionTracking || (i = "onerror", s("_" + i), u = f[i], f[i] = function (config, r, f, e, o) { var s = u && u(config, r, f, e, o); return s !== !0 && t["_" + i](config, r, f, e, o), s }), t
         }({
-            instrumentationKey:"6e7a5561-de9f-4457-981d-97affa0cb4de"
+            instrumentationKey: "6e7a5561-de9f-4457-981d-97affa0cb4de"
         });
-        
-        window.appInsights=appInsights;
+
+        window.appInsights = appInsights;
         appInsights.trackPageView();
     </script>
 </head>
@@ -30,11 +31,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
                     <li>@Html.ActionLink("Notifications", "Notifications", "Dashboard")</li>
-                    <li>@Html.ActionLink("QPX Manager", "QPX", "Dashboard")</li>
-                    @* <li>@Html.ActionLink("About", "About", "Home")</li> 
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                    @*<li>@Html.ActionLink("QPX Manager", "QPX", "Dashboard")</li>*@
                 </ul>
             </div>
         </div>
@@ -48,7 +46,23 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+        $(function () {
+            $("#inputFlightDate").datepicker();
+        });
+        $("#target").submit(function (event) {
+            alert("Flight number: " + $("#inputFlightNumber").val() + "\nFlight date: " + $("#inputFlightDate").val() +
+                  "\nOrigin: " + $("#inputOriginAirport").val() + "\nOrigin Gate: " + $("#inputOriginGate").val() +
+                  "\nOrigin Status: " + $("#selectOriginStatus").val() + "\nOrigin Msg: " + $("#textOriginMessage").val() +
+                  "\nDest: " + $("#inputDestinationAirport").val() + "\nDest Gate: " + $("#inputDestinationGate").val() +
+                  "\nDest Status: " + $("#selectDestinationStatus").val() + "\nDest Msg: " + $("#textDestinationMessage").val());
+            event.preventDefault();
+        });
+
+
+    </script>
 </body>
 </html>

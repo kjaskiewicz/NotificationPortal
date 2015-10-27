@@ -4,21 +4,202 @@
 }
 
 <div class="page-header">
-    <h3>AA Notification Simulator Dashboard</h3>
+    <h3>American Airlines</h3>
+    <h4>Flight Notification Simulator</h4>
     @*<p class="lead">Notification Simulator Dashboard</p>*@
 </div>
 
 <div class="row">
-    <div class="col-md-6">
-        <h2>Set new notification</h2>
-        <p>
-            Click the <strong>Set new</strong> button to create and manage a new notification.
-        </p>
-        <p><a class="btn btn-default" href="/Notifications/Set">Set new &raquo;</a></p>
+    <div class="col-md-12">
+        <h4>Set notification</h4>
+        <div class="panel-body">
+            <form id="target" class="form-horizontal">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Flight segment</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label" for="inputFlightNumber">Flight number</label>
+                                    <div class="col-lg-6">
+                                        <input class="form-control" id="inputFlightNumber" type="text" placeholder="Flight number">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label" for="inputFlightDate">Flight date</label>
+                                    <div class="col-lg-6">
+                                        <input class="form-control" type="text" id="inputFlightDate">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Origin</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label" for="inputOriginAirport">Airport</label>
+                                    <div class="col-lg-10">
+                                        <input class="form-control" id="inputOriginAirport" type="text" placeholder="Origin airport">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label" for="inputOriginGate">Gate</label>
+                                    <div class="col-lg-10">
+                                        <input class="form-control" id="inputOriginGate" type="text" placeholder="Origin gate">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label" for="selectOriginStatus">Status</label>
+                                    <div class="col-lg-10">
+                                        <select class="form-control" id="selectOriginStatus">
+                                            <option>No change</option>
+                                            <option>On time</option>
+                                            <option>Delayed</option>
+                                            <option>Diverted</option>
+                                            <option>Canceled</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label" for="textOriginMessage">Status message</label>
+                                    <div class="col-lg-10">
+                                        <textarea class="form-control" id="textOriginMessage" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Destination</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label" for="inputDestinationAirport">Airport</label>
+                                    <div class="col-lg-10">
+                                        <input class="form-control" id="inputDestinationAirport" type="text" placeholder="Destination airport">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label" for="inputDestinationGate">Gate</label>
+                                    <div class="col-lg-10">
+                                        <input class="form-control" id="inputDestinationGate" type="text" placeholder="Destination gate">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label" for="selectDestinationStatus">Status</label>
+                                    <div class="col-lg-10">
+                                        <select class="form-control" id="selectDestinationStatus">
+                                            <option>No change</option>
+                                            <option>On time</option>
+                                            <option>Delayed</option>
+                                            <option>Diverted</option>
+                                            <option>Canceled</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label" for="textDestinationMessage">Status message</label>
+                                    <div class="col-lg-10">
+                                        <textarea class="form-control" id="textDestinationMessage" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-2">
+                                <button class="btn btn-default" type="reset">Cancel</button>
+                                <button class="btn btn-primary" type="submit">Send notification</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="col-md-6">
-        <h2>View notifications</h2>
-        <p>Click the <strong>View</strong> button to see current notifications.</p>
-        <p><a class="btn btn-default" href="/Notifications/View">View &raquo;</a></p>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h4>View notifications</h4>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Registered notifications</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Event ID</th>
+                            <th>User</th>
+                            <th>Device</th>
+                            <th>Tags</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @*<tr>
+                            <td>1</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                        </tr>
+                        <tr class="info">
+                            <td>3</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                        </tr>
+                        <tr class="success">
+                            <td>4</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                        </tr>
+                        <tr class="danger">
+                            <td>5</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                        </tr>
+                        <tr class="warning">
+                            <td>6</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                        </tr>
+                        <tr class="active">
+                            <td>7</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                        </tr>*@
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
